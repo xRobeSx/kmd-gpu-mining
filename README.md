@@ -10,11 +10,11 @@
 
 
 **Step 1. Update**
-
+```bash
 sudo apt-get update
 
 sudo apt-get upgrade
-
+```
 
 
 **Step 2. Install Dependencies for KMD**
@@ -24,16 +24,16 @@ sudo apt-get install build-essential pkg-config libc6-dev m4 g++-multilib autoco
 
 
 **Step 3. Install Komodod**
-
+```bash
 git clone https://github.com/jl777/komodo
 cd komodo
 ./zcutil/fetch-params.sh
 .zcutil/build.sh -j8   (replace 8 with number of CPU threads you want to use) (this will take some time.)
-
+```
 
 
 **Step 4. Create and Modify komodo.conf**
-
+```bash
 cd ..
 mkdir .komodo
 cd .komodo
@@ -55,7 +55,7 @@ addnode=144.76.94.38
 blocknotify=node /home/<user>/z-nomp/scripts/cli.js blocknotify komodo %s
 
 Ctrl+X, then Y to save. 
-
+```
 
 
 **Step 5. Install kmd-nomp**
