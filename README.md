@@ -27,7 +27,7 @@ Assuming that your GPU's are on the same computer as Komodod and KMD-Nomp, then 
 
 **Optiminer (linux miner) github is located here: https://github.com/Optiminer/OptiminerZcash**
 
-**Setup guide is available on their page**
+**Setup guide is available on their github: https://github.com/Optiminer/OptiminerZcash/blob/master/README.md ** 
 
 
 
