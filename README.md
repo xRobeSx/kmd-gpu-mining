@@ -6,7 +6,7 @@
 2. kmd-nomp
 3. miner of your choice 
 
-*Please note, steps 1 and 2 are required because there are currently no KMD pools.* 
+*Please note, komodod and kmd-nomp are only required because there are currently no KMD pools.* 
 
 
 **Step 1. Update**
@@ -90,15 +90,17 @@ sudo service redis-server restart
 
 **Step 7. Edit blockTemplate.js to remove this.rpcData.founders (from zcash)**
 
-=>in file "z-nomp/node_modules/stratum-pool/lib/blockTemplate.js"
-replace line 26 by
+cd kmd-nomp/node_modules/stratum-pool/lib/
+nano blockTemplate.js
+
+replace line 26 with
 var blockReward = (this.rpcData.miner) * 100000000;
 
 *if not done, it will generate an error*
 
 
 
-**Step 8. KMD-NOMP Config Files**
+**Step 8. KMD-Nomp Site Config File**
 
 cd ..
 cd kmd-nomp
@@ -114,7 +116,67 @@ nano config.json
 Ctrl+X, then Y to save.
 
 
+**Step 9. Create KMD-Nomp Coin Config File**
+
+cd kmd-nomp/coins
+nano komodo.json
+
+{
+    "name": "komodo",
+    "symbol": "KMD",
+    "algorithm": "equihash",
+    "payFoundersReward": false
+}
 
 
+**Step 10. Create KMD-Nomp
 
+cd kmd-nomp/pool_configs
+cp zclassic.json komodo.json
+nano komodo.json
 
+enabled": true,
+    "coin": "komodo.json",
+ 
+    "address": "t1dfrrxCHek2ts987VpZsRmFKBvdcBJ1Cqd",
+    "_comment_address": "a transparent address to send coinbase rewards to and to transfer to zAddress.",
+ 
+    "zAddress": "ztqgT4xsouCyjHXrFtXnDVgtvPRmURMgHQw2gd39dLdtoYkmPACScHturZjqsNdAPtP6JCLaWmZmYDqbjCMRgdCfQ2vjY2K",
+    "_comment_zAddress": "a private address used to send coins to tAddress.",
+ 
+    "tAddress": "tmLqYHEnCiL4dpktEKdAKeRjPdkxNtJVWfb",
+    "_comment_tAddress": "transparent address used to send payments, make this a different address, otherwise payments will not send",
+
+"paymentProcessing": {
+        "enabled": false,
+        "paymentInterval": 30,
+        "minimumPayment": 1,
+        "daemon": {
+            "host": "127.0.0.1",
+            "port": <yourRpcport>,
+            "user": "<yourRpcUserName>",
+            "password": "<yourRpcPassword>"
+        }
+    },
+ 
+    "ports": {
+        "7777": {
+            "diff": 0.05,
+            "varDiff": {
+                "minDiff": 0.04,
+                "maxDiff": 16,
+                "targetTime": 15,
+                "retargetTime": 60,
+                "variancePercent": 30
+            }
+        }
+    },
+ 
+    "daemons": [
+        {
+            "host": "127.0.0.1",
+            "port": <yourRpcport>,
+            "user": "<yourRpcUserName>",
+            "password": "<yourRpcPassword>"
+        }
+    ],
