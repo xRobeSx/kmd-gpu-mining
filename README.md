@@ -13,6 +13,8 @@
 
 https://github.com/xRobeSx/kmd-nomp
 
+*Installation is for Ubuntu 14.04 +*
+
 **Once Komodod and KMD-Nomp are running, you now have a stratum pool to point your GPU miners.**
 
 
