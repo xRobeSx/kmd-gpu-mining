@@ -132,6 +132,7 @@ nano komodo.json
 
 **Step 10. Create KMD-Nomp**
 ```bash
+cd ..
 cd kmd-nomp/pool_configs
 cp zclassic.json komodo.json
 nano komodo.json
@@ -182,3 +183,21 @@ enabled": true,
         }
     ],
 ```
+*Please note: You must change the first 3 addresses to your personal ones. Also change RPCport, RPCusername and RPCpassword to the ones set in your komodod komodo.conf file.
+
+Payment Processing is set to false. This is because we're mining locally, and not running it as a pool.
+*
+
+
+**Step 11. Start KMD-Nomp**
+```bash
+cd ..
+cd kmd-nomp
+npm start
+```
+
+**Step 12. Check if KMD-Nomp is running**
+
+In a browser, type 127.0.0.1:PORT (you specified in config.json, default:8080) and the page should display. 
+
+
