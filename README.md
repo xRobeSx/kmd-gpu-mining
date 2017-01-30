@@ -25,12 +25,12 @@ Assuming that your GPU's are on the same computer as Komodod and KMD-Nomp, then 
 
 
 
-**Optiminer github is located here: https://github.com/Optiminer/OptiminerZcash **
+**Optiminer github is located here: https://github.com/Optiminer/OptiminerZcash**
 
 
 
 
 
-*Please note, if you install Komodod and KMD-Nomp on another computer/server, you can mine with GPU's on windows as well. *
+*Please note, if you install Komodod and KMD-Nomp on another computer/server, you can mine with GPU's on windows as well.*
 
 *This will just requiring pointing your windows miners to 192.168.1.xxx:7777(komodod and KMD-Nomp) vs locally with (127.0.0.1:7777)*
