@@ -59,7 +59,7 @@ Ctrl+X, then Y to save.
 
 
 **Step 5. Install kmd-nomp**
-
+```bash
 cd ..
 sudo apt-get install libsodium-dev npm redis-server
 sudo npm install n -g
@@ -68,9 +68,9 @@ git clone https://github.com/xrobesx/kmd-nomp
 cd kmd-nomp
 npm update
 npm install
-
+```
 *if libsodium package not found (ubuntu 14.04)*
-
+```bash
 cd ..
 git clone https://github.com/jedisct1/libsodium.git
 cd libsodium
@@ -78,30 +78,31 @@ cd libsodium
 ./autogen.sh
 sudo make
 sudo make install
-
+```
 
 
 **Step 6. Restart Redis-server**
-
+```bash
 cd ..
 sudo service redis-server restart
-
+```
 
 
 **Step 7. Edit blockTemplate.js to remove this.rpcData.founders (from zcash)**
-
+```bash
 cd kmd-nomp/node_modules/stratum-pool/lib/
 nano blockTemplate.js
-
+```
 replace line 26 with
+```bash
 var blockReward = (this.rpcData.miner) * 100000000;
-
+```
 *if not done, it will generate an error*
 
 
 
 **Step 8. KMD-Nomp Site Config File**
-
+```bash
 cd ..
 cd kmd-nomp
 cp config_example.json config.json
@@ -114,10 +115,10 @@ nano config.json
         "stratumHost": "127.0.0.1",
 
 Ctrl+X, then Y to save.
-
+```
 
 **Step 9. Create KMD-Nomp Coin Config File**
-
+```bash
 cd kmd-nomp/coins
 nano komodo.json
 
@@ -127,10 +128,10 @@ nano komodo.json
     "algorithm": "equihash",
     "payFoundersReward": false
 }
-
+```
 
 **Step 10. Create KMD-Nomp
-
+```bash
 cd kmd-nomp/pool_configs
 cp zclassic.json komodo.json
 nano komodo.json
@@ -180,3 +181,4 @@ enabled": true,
             "password": "<yourRpcPassword>"
         }
     ],
+```
