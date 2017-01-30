@@ -130,7 +130,7 @@ nano komodo.json
 }
 ```
 
-**Step 10. Create KMD-Nomp
+**Step 10. Create KMD-Nomp**
 ```bash
 cd kmd-nomp/pool_configs
 cp zclassic.json komodo.json
