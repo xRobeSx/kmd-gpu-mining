@@ -9,6 +9,8 @@
 *Please note, komodod and kmd-nomp are only required because there are currently no KMD mining pools.* 
 *We will basically be setting up a local mining pool, as its required for GPU support*
 
+*This setup guide is intended for Ubuntu*
+
 
 **Step 1. Update**
 ```bash
