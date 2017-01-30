@@ -2,11 +2,12 @@
 
 **To mine Komodo with GPU, you will need 3 things:**
 
-1. Komodod
-2. kmd-nomp
+1. Komodod   https://github.com/jl777/komodo
+2. kmd-nomp    https://github.com/xrobesx/kmd-nomp
 3. miner of your choice 
 
-*Please note, komodod and kmd-nomp are only required because there are currently no KMD pools.* 
+*Please note, komodod and kmd-nomp are only required because there are currently no KMD mining pools.* 
+*We will basically be setting up a local mining pool, as its required for GPU support*
 
 
 **Step 1. Update**
@@ -183,10 +184,10 @@ enabled": true,
         }
     ],
 ```
-*Please note: You must change the first 3 addresses to your personal ones. Also change RPCport, RPCusername and RPCpassword to the ones set in your komodod komodo.conf file.
+*Please note: You must change the first 3 addresses to your personal ones. Also change RPCport, RPCusername and RPCpassword to the ones set in your komodod komodo.conf file.*
 
-Payment Processing is set to false. This is because we're mining locally, and not running it as a pool.
-*
+*Payment Processing is set to false. This is because we're mining locally, and not running it as an online pool.*
+
 
 
 **Step 11. Start KMD-Nomp**
