@@ -18,9 +18,9 @@ sudo apt-get upgrade
 
 
 **Step 2. Install Dependencies for KMD**
-
+```bash
 sudo apt-get install build-essential pkg-config libc6-dev m4 g++-multilib autoconf libtool ncurses-dev unzip git python zlib1g-dev wget bsdmainutils automake libboost-all-dev libssl-dev libprotobuf-dev protobuf-compiler libqt4-dev libqrencode-dev libdb++-dev ntp ntpdate
-
+```
 
 
 **Step 3. Install Komodod**
